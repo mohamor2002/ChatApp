@@ -21,6 +21,10 @@ io.on('connection', socket=>{
         console.log('new connection');
         socket.emit('message',formatMessage(Botname,'Hello'));
         socket.broadcast.to(user.room).emit('message',formatMessage(Botname,`${user.username} entered the chat`));
+        io.to(user.room).emit('users', {
+            room:user.room,
+            users:getRoomUser(user.room)
+        });
     })
 
     socket.on('chat-message',msg=>{
@@ -30,9 +34,14 @@ io.on('connection', socket=>{
 
     socket.on('disconnect', ()=>{
         const user= userDisconnect(socket.id)
-
+        console.log(user);
         io.to(user.room).emit('message',formatMessage(Botname,`${user.username} left the chat`));
+        io.to(user.room).emit('users', {
+            room:user.room,
+            users:getRoomUser(user.room)
+        });
     })
+
 
 })
 

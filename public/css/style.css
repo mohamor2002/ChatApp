@@ -3,7 +3,7 @@
 :root {
 	--dark-color-a: #667aff;
 	--dark-color-b: #7386ff;
-	--light-color: #e6e9ff;
+	--light-color: #e5e8ff;
 	--success-color: #5cb85c;
 	--error-color: #d9534f;
 }
@@ -131,20 +131,22 @@ a {
 .join-container {
 	max-width: 500px;
 	margin: 80px auto;
-	color: #fff;
+	border-radius: 50px;
+background: linear-gradient(145deg, #f5f8ff, #ced1e6);
+box-shadow:  9px 9px 18px #c3c5d9;
 }
 
 .join-header {
+	color: var(--dark-color-a);
 	text-align: center;
 	padding: 20px;
-	background: var(--dark-color-a);
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 }
 
 .join-main {
 	padding: 30px 40px;
-	background: var(--dark-color-b);
+	
 }
 
 .join-main p {
@@ -161,20 +163,32 @@ a {
 }
 
 .join-main input[type='text'] {
+	border-radius: 5px;
 	font-size: 16px;
 	padding: 5px;
 	height: 40px;
 	width: 100%;
+	border-width: 2px;
+	border-style:solid;
+	border-color: #a6b2ff;
+	outline-color: #667aff;
 }
 
 .join-main select {
+	border-radius: 5px;
 	font-size: 16px;
 	padding: 5px;
 	height: 40px;
 	width: 100%;
+	border-width: 2px;
+	border-color: #a6b2ff;
+	outline-color: #667aff;
 }
 
 .join-main .btn {
+	border-radius: 5px;
+	background-color: var(--dark-color-a);
+	color: var(--light-color);
 	margin-top: 20px;
 	width: 100%;
 }
